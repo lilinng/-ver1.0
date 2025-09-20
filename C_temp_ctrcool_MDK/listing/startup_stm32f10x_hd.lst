@@ -1,0 +1,61 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ;******************** (C) COPYRIGHT 2011 STMicroelectron
+                       ics ********************
+    2 00000000         ;* File Name          : startup_stm32f10x_hd.s
+    3 00000000         ;* Author             : MCD Application Team
+    4 00000000         ;* Version            : V3.5.0
+    5 00000000         ;* Date               : 11-March-2011
+    6 00000000         ;* Description        : STM32F10x High Density Devices v
+                       ector table for MDK-ARM 
+    7 00000000         ;*                      toolchain. 
+    8 00000000         ;*                      This module performs:
+    9 00000000         ;*                      - Set the initial SP
+   10 00000000         ;*                      - Set the initial PC == Reset_Ha
+                       ndler
+   11 00000000         ;*                      - Set the vector table entries w
+                       ith the exceptions ISR address
+   12 00000000         ;*                      - Configure the clock system and
+                        also configure the external 
+   13 00000000         ;*                        SRAM mounted on STM3210E-EVAL 
+                       board to be used as data 
+   14 00000000         ;*                        memory (optional, to be enable
+                       d by user)
+   15 00000000         ;*                      - Branches to __main in the C li
+                       brary (which eventually
+   16 00000000         ;*                        calls main()).
+   17 00000000         ;*                      After Reset the CortexM3 process
+                       or is in Thread mode,
+   18 00000000         ;*                      priority is Privileged, and the 
+                       Stack is set to Main.
+   19 00000000         ;* <<< Use Configuration Wizard in Context Menu >>>   
+   20 00000000         ;*******************************************************
+                       ************************
+   21 00000000         ; THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS A
+                       T PROVIDING CUSTOMERS
+   22 00000000         ; WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN OR
+                       DER FOR THEM TO SAVE TIME.
+   23 00000000         ; AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIAB
+                       LE FOR ANY DIRECT,
+   24 00000000         ; INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY 
+                       CLAIMS ARISING FROM THE
+   25 00000000         ; CONTENT OF SUCH FIRMWARE AND/OR THE USE MADE BY CUSTOM
+                       ERS OF THE CODING
+   26 00000000         ; INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR 
+                       PRODUCTS.
+   27 00000000         ;*******************************************************
+                       ************************
+   28 00000000         
+   29 00000000         ; Amount of memory (in bytes) allocated for Stack
+   30 00000000         ; Tailor this value to your application needs
+   31 00000000         ; <h> Stack Configuration
+   32 00000000         ;   <o> Stack Size (in Bytes) <0x0-0xFFFFFFFF:8>
+   33 00000000         ; </h>
+   34 00000000         
+   35 00000000 00000C00 
+                       Stack_Size
+                               EQU              0x00000C00  ;栈大小-1024B-由编

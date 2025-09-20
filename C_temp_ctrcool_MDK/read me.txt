@@ -1,0 +1,5 @@
+1、使用前须将esp8266.c中的宏esp8266_sifi_info中的wifi名和密码设置
+2、需将onenet.c中的三项宏定义好
+3、DHT11的DATA线为PA0,串口打印为PA9:TX；PA10:RX;
+4、esp8266使用stm32的PA2:TX;PA3:RX;
+5、OLED使用四针脚I2C协议，SCL为PB1,SDA为PB0

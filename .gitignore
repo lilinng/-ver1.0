@@ -1,0 +1,17 @@
+# dot files
+/.vscode
+/.pack
+/.eide
+/.cmsis
+
+# project out
+/build
+/bin
+/obj
+/out
+
+# eide template
+*.ept
+*.eide-template
+
+
