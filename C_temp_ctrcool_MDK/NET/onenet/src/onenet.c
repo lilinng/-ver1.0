@@ -475,7 +475,7 @@ void OneNet_SendData(void)
 	
 	char buf[512];
 	
-	short body_len = 0, i = 0;
+	int body_len = 0;
 	
 	//UsartPrintf(USART_DEBUG, "Tips:	OneNet_SendData-MQTT\r\n");
 	
