@@ -114,7 +114,7 @@ int main(void)
 		
 		Delay_s(2);
 		
-		if(++timeCount >= 50)									
+		if(++timeCount >= 10)									
 		{
 			
 			OneNet_SendData();									//发送数据			

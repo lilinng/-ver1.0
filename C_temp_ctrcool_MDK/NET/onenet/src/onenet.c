@@ -413,6 +413,9 @@ unsigned char OneNet_FillBuf(char *buf)
 		UsartPrintf(USART_DEBUG, "Fill1\r\n");
 
 		strcat(buf, "}}");
+
+		UsartPrintf(USART_DEBUG, "buf:%s\r\n",buf);
+
 	}
 	else if (R_S_Flag==1)
 	{
