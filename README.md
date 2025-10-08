@@ -1,0 +1,1 @@
+本项目基于VSCode的WIDE插件进行完成，内置keil项目的工程文件，具体说明参考main.c
