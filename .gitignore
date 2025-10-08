@@ -1,8 +1,6 @@
 # dot files
 /.vscode
 /.pack
-/.eide
-/.cmsis
 
 # project out
 /build

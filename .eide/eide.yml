@@ -1,0 +1,219 @@
+version: "4.1"
+name: stm32f103
+type: ARM
+deviceName: STM32F103C8
+packDir: .pack/Keil/STM32F1xx_DFP.2.4.1
+srcDirs: []
+virtualFolder:
+  name: <virtual_root>
+  files: []
+  folders:
+    - name: core
+      files:
+        - path: C_temp_ctrcool_MDK/core/core_cm3.c
+        - path: C_temp_ctrcool_MDK/core/stm32f10x_it.c
+        - path: C_temp_ctrcool_MDK/core/system_stm32f10x.c
+        - path: C_temp_ctrcool_MDK/core/startup/arm/startup_stm32f10x_md.s
+      folders: []
+    - name: fwlib
+      files:
+        - path: C_temp_ctrcool_MDK/fwlib/src/misc.c
+        - path: C_temp_ctrcool_MDK/fwlib/src/stm32f10x_gpio.c
+        - path: C_temp_ctrcool_MDK/fwlib/src/stm32f10x_rcc.c
+        - path: C_temp_ctrcool_MDK/fwlib/src/stm32f10x_usart.c
+        - path: C_temp_ctrcool_MDK/fwlib/src/stm32f10x_adc.c
+        - path: C_temp_ctrcool_MDK/fwlib/src/stm32f10x_bkp.c
+        - path: C_temp_ctrcool_MDK/fwlib/src/stm32f10x_can.c
+        - path: C_temp_ctrcool_MDK/fwlib/src/stm32f10x_cec.c
+        - path: C_temp_ctrcool_MDK/fwlib/src/stm32f10x_crc.c
+        - path: C_temp_ctrcool_MDK/fwlib/src/stm32f10x_dac.c
+        - path: C_temp_ctrcool_MDK/fwlib/src/stm32f10x_dbgmcu.c
+        - path: C_temp_ctrcool_MDK/fwlib/src/stm32f10x_dma.c
+        - path: C_temp_ctrcool_MDK/fwlib/src/stm32f10x_exti.c
+        - path: C_temp_ctrcool_MDK/fwlib/src/stm32f10x_flash.c
+        - path: C_temp_ctrcool_MDK/fwlib/src/stm32f10x_fsmc.c
+        - path: C_temp_ctrcool_MDK/fwlib/src/stm32f10x_i2c.c
+        - path: C_temp_ctrcool_MDK/fwlib/src/stm32f10x_iwdg.c
+        - path: C_temp_ctrcool_MDK/fwlib/src/stm32f10x_pwr.c
+        - path: C_temp_ctrcool_MDK/fwlib/src/stm32f10x_rtc.c
+        - path: C_temp_ctrcool_MDK/fwlib/src/stm32f10x_sdio.c
+        - path: C_temp_ctrcool_MDK/fwlib/src/stm32f10x_spi.c
+        - path: C_temp_ctrcool_MDK/fwlib/src/stm32f10x_tim.c
+        - path: C_temp_ctrcool_MDK/fwlib/src/stm32f10x_wwdg.c
+      folders: []
+    - name: hardware
+      files:
+        - path: C_temp_ctrcool_MDK/hardware/src/usart.c
+        - path: C_temp_ctrcool_MDK/hardware/src/Midea.c
+        - path: C_temp_ctrcool_MDK/hardware/src/sys.c
+        - path: C_temp_ctrcool_MDK/hardware/src/OLED.c
+        - path: C_temp_ctrcool_MDK/hardware/src/dht11.c
+        - path: C_temp_ctrcool_MDK/hardware/src/Delay.c
+      folders: []
+    - name: user
+      files:
+        - path: C_temp_ctrcool_MDK/user/main.c
+      folders: []
+    - name: OneNET
+      files:
+        - path: C_temp_ctrcool_MDK/NET/onenet/src/onenet.c
+        - path: C_temp_ctrcool_MDK/NET/onenet/src/hmac_sha1.c
+        - path: C_temp_ctrcool_MDK/NET/onenet/src/base64.c
+      folders: []
+    - name: net_protocol
+      files:
+        - path: C_temp_ctrcool_MDK/NET/MQTT/MqttKit.c
+        - path: C_temp_ctrcool_MDK/NET/CJSON/cJSON.c
+      folders: []
+    - name: net_device
+      files:
+        - path: C_temp_ctrcool_MDK/NET/device/src/esp8266.c
+      folders: []
+    - name: Sys
+      files:
+        - path: C_temp_ctrcool_MDK/Sys/Timer.c
+      folders: []
+dependenceList: []
+outDir: build
+miscInfo:
+  uid: 024c7ad906ac7cc34057fa0316989877
+targets:
+  STM32F103:
+    cppPreprocessAttrs:
+      defineList:
+        - STM32F10X_MD
+        - USE_STDPERIPH_DRIVER
+      incList:
+        - .
+        - C_temp_ctrcool_MDK/core
+        - C_temp_ctrcool_MDK/fwlib/inc
+        - C_temp_ctrcool_MDK/hardware/inc
+        - C_temp_ctrcool_MDK/user
+        - C_temp_ctrcool_MDK/NET/onenet/inc
+        - C_temp_ctrcool_MDK/NET/MQTT
+        - C_temp_ctrcool_MDK/NET/device/inc
+        - C_temp_ctrcool_MDK/Sys
+        - C_temp_ctrcool_MDK/NET/CJSON
+        - .cmsis/include
+        - C_temp_ctrcool_MDK/RTE/_STM32F103
+      libList: []
+    excludeList: []
+    toolchain: AC5
+    toolchainConfigMap:
+      AC5:
+        archExtensions: ""
+        cpuType: Cortex-M3
+        floatingPointHardware: none
+        options:
+          version: 4
+          afterBuildTasks: []
+          asm-compiler: {}
+          beforeBuildTasks: []
+          c/cpp-compiler:
+            CXX_FLAGS: --diag_suppress=1 --diag_suppress=1295
+            C_FLAGS: --diag_suppress=1 --diag_suppress=1295
+            c99-mode: true
+            one-elf-section-per-function: true
+            optimization: level-0
+            warnings: all-warnings
+          global:
+            output-debug-info: enable
+            use-microLIB: true
+          linker:
+            $outputTaskExcludes:
+              - .bin
+            output-format: elf
+            ro-base: "0x08000000"
+            rw-base: "0x20000000"
+            xo-base: ""
+        scatterFilePath: ""
+        storageLayout:
+          RAM:
+            - id: 1
+              isChecked: false
+              mem:
+                size: "0x0"
+                startAddr: "0x0"
+              noInit: false
+              tag: RAM
+            - id: 2
+              isChecked: false
+              mem:
+                size: "0x0"
+                startAddr: "0x0"
+              noInit: false
+              tag: RAM
+            - id: 3
+              isChecked: false
+              mem:
+                size: "0x0"
+                startAddr: "0x0"
+              noInit: false
+              tag: RAM
+            - id: 1
+              isChecked: true
+              mem:
+                size: "0x5000"
+                startAddr: "0x20000000"
+              noInit: false
+              tag: IRAM
+            - id: 2
+              isChecked: false
+              mem:
+                size: "0x0"
+                startAddr: "0x0"
+              noInit: false
+              tag: IRAM
+          ROM:
+            - id: 1
+              isChecked: false
+              isStartup: false
+              mem:
+                size: "0x0"
+                startAddr: "0x0"
+              tag: ROM
+            - id: 2
+              isChecked: false
+              isStartup: false
+              mem:
+                size: "0x0"
+                startAddr: "0x0"
+              tag: ROM
+            - id: 3
+              isChecked: false
+              isStartup: false
+              mem:
+                size: "0x0"
+                startAddr: "0x0"
+              tag: ROM
+            - id: 1
+              isChecked: true
+              isStartup: true
+              mem:
+                size: "0x10000"
+                startAddr: "0x8000000"
+              tag: IROM
+            - id: 2
+              isChecked: false
+              isStartup: false
+              mem:
+                size: "0x0"
+                startAddr: "0x0"
+              tag: IROM
+        useCustomScatterFile: false
+    uploadConfigMap:
+      JLink:
+        baseAddr: ""
+        bin: ""
+        cpuInfo:
+          cpuName: "null"
+          vendor: "null"
+        otherCmds: ""
+        proType: 1
+        speed: 8000
+      OpenOCD:
+        baseAddr: "0x08000000"
+        bin: ""
+        interface: stlink-v2
+        target: stm32f1x
+    uploader: OpenOCD
