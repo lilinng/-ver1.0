@@ -1,3 +1,9 @@
+/*本项目基于b站壹知半解项目*/
+/*此项目在原有基础上增加了红外控制美的品牌空调以及平台调试后设备回应的功能*/
+/*ver1.0 date:2025-10-08*/
+
+/*使用前需要在esp8266.c中更改自身wifi_name、wifi_password和onenet.c中添加PROID等参数*/
+
 #include "stm32f10x.h"
 
 //网络协议层
@@ -8,7 +14,7 @@
 
 //硬件驱动
 #include "usart.h"
-#include "Midea.h"
+#include "Midea.h"	//红外驱动，基于定时器的PWM调制
 #include "dht11.h"
 #include "OLED.h"
 
@@ -34,8 +40,6 @@ void Hardware_Init(void)//硬件初始化
 	remote_Init();									//红外模块初始化
 
 	Usart1_Init(115200);							//串口1，打印信息用
-	
-	
 	
 	Usart2_Init(115200);							//串口2，驱动ESP8266用
 	
@@ -68,9 +72,6 @@ int main(void)
 	unsigned char *dataPtr = NULL;
 	
 	Hardware_Init();				//初始化外围硬件
-	
-	// OLED_ShowString(1,1,"temp:"");
-	// OLED_ShowString(2,1,"humi:);
 	
 	ESP8266_Init();					//初始化ESP8266
 		
@@ -113,7 +114,7 @@ int main(void)
 		OLED_ShowString(4,1,"ver:1.0");	
 		
 		Delay_s(2);
-		
+		//timeCount为发送数据至平台的时间
 		if(++timeCount >= 10)									
 		{
 			
@@ -121,13 +122,11 @@ int main(void)
 			timeCount = 0;
 			ESP8266_Clear();
 		}	
+
 		dataPtr = ESP8266_GetIPD(0);							//接收平台数据
-		
 		if(dataPtr != NULL)
 		{
-//			Midea_Number(speed,mode,temp_Set++);//空调上电默认参数
 			OneNet_RevPro(dataPtr);
 		}
-		//接受下发属性后更改空调参数
 	}
 }

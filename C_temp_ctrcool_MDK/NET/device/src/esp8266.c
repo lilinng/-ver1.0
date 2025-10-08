@@ -33,7 +33,7 @@
 #include <stdio.h>
 
 
-#define ESP8266_WIFI_INFO		"AT+CWJAP=\"lilinng\",\"WYX103729\"\r\n"
+#define ESP8266_WIFI_INFO		"AT+CWJAP=\"wifi_name\",\"wifi_password\"\r\n"
 
 
 unsigned char esp8266_buf[512];
