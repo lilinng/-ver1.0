@@ -45,11 +45,11 @@
 #include "cJSON.h"
 
 
-#define PROID			""		//设备id
+#define PROID			"P839UhygiS"		//设备id
 
-#define ACCESS_KEY		""		
+#define ACCESS_KEY		"R1g5M2pJUDFnRnNJeDUxOEtjM0hReHBIY1lKNDR5dGc="		
 
-#define DEVICE_NAME		""		//设备名称
+#define DEVICE_NAME		"d2"		//设备名称
 
 
 char devid[16];

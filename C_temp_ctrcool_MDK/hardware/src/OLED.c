@@ -324,13 +324,13 @@ void OLED_ShowMideaMode(uint8_t mode)
 	switch(mode)
 	{
 		case 0:
-			OLED_ShowString(2,12,"Cool");
+			OLED_ShowString(2,12,"Auto");
 			break;
 		case 1:
-			OLED_ShowString(2,12,"Dehu");
+			OLED_ShowString(2,12,"Cool");
 			break;
 		case 2:
-			OLED_ShowString(2,12,"Auto");
+			OLED_ShowString(2,12,"Dehu");
 			break;
 		case 3:
 			OLED_ShowString(2,12,"Hot ");
